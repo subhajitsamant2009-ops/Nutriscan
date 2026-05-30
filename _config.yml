@@ -1,0 +1,7 @@
+title: NutriScan
+description: "Eat Smart. Live Better. — AI-powered food nutrition explorer."
+theme: null
+plugins: []
+exclude:
+  - README.md
+  - .github/

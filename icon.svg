@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1d14;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0e0f0c;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d8ff6a;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#a8e040;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="scanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#60c8f0;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#60c8f0;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#60c8f0;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c8f060;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#60c8f0;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="roundedRect">
+      <rect width="512" height="512" rx="112" ry="112"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" ry="112" fill="url(#bgGrad)"/>
+
+  <!-- Subtle background glow -->
+  <ellipse cx="160" cy="140" rx="180" ry="160" fill="rgba(200,240,96,0.04)"/>
+  <ellipse cx="360" cy="380" rx="160" ry="140" fill="rgba(96,200,240,0.04)"/>
+
+  <!-- Outer ring arc (nutrition ring) -->
+  <circle cx="256" cy="256" r="168" fill="none" stroke="#2a2d22" stroke-width="3"/>
+  <!-- Colored arc segments representing macros -->
+  <circle cx="256" cy="256" r="168" fill="none" stroke="#c8f060" stroke-width="6"
+    stroke-dasharray="211 845" stroke-dashoffset="0" stroke-linecap="round"
+    transform="rotate(-90 256 256)" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="256" cy="256" r="168" fill="none" stroke="#f0c060" stroke-width="6"
+    stroke-dasharray="158 845" stroke-dashoffset="-211" stroke-linecap="round"
+    transform="rotate(-90 256 256)" opacity="0.8"/>
+  <circle cx="256" cy="256" r="168" fill="none" stroke="#f06060" stroke-width="6"
+    stroke-dasharray="106 845" stroke-dashoffset="-369" stroke-linecap="round"
+    transform="rotate(-90 256 256)" opacity="0.7"/>
+
+  <!-- Inner card/plate shape -->
+  <rect x="136" y="148" width="240" height="216" rx="24" ry="24"
+    fill="#1d1f18" stroke="#2a2d22" stroke-width="1.5"/>
+
+  <!-- Leaf / plant stem (left side) -->
+  <g filter="url(#glow)">
+    <!-- Main stem -->
+    <line x1="218" y1="340" x2="218" y2="220" stroke="#a8e040" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Left leaf -->
+    <path d="M218 280 C200 265 185 250 192 232 C200 240 212 255 218 268 Z"
+      fill="url(#leafGrad)" opacity="0.95"/>
+    <!-- Right leaf -->
+    <path d="M218 258 C238 242 252 228 246 210 C237 220 224 237 218 252 Z"
+      fill="url(#leafGrad)" opacity="0.85"/>
+    <!-- Top sprout -->
+    <path d="M218 220 C218 208 226 198 234 196 C230 206 224 213 218 220 Z"
+      fill="url(#leafGrad)" opacity="0.9"/>
+  </g>
+
+  <!-- Scan line (horizontal accent) -->
+  <rect x="136" y="248" width="240" height="2" rx="1"
+    fill="url(#scanGrad)" opacity="0.7"/>
+
+  <!-- Data bars (right side) representing nutrition data -->
+  <g opacity="0.9">
+    <!-- Bar labels area -->
+    <rect x="250" y="190" width="88" height="8" rx="4" fill="#2a2d22"/>
+    <rect x="250" y="190" width="72" height="8" rx="4" fill="#c8f060" opacity="0.9"/>
+
+    <rect x="250" y="208" width="88" height="8" rx="4" fill="#2a2d22"/>
+    <rect x="250" y="208" width="52" height="8" rx="4" fill="#f0c060" opacity="0.85"/>
+
+    <rect x="250" y="226" width="88" height="8" rx="4" fill="#2a2d22"/>
+    <rect x="250" y="226" width="36" height="8" rx="4" fill="#f06060" opacity="0.8"/>
+
+    <rect x="250" y="270" width="88" height="8" rx="4" fill="#2a2d22"/>
+    <rect x="250" y="270" width="60" height="8" rx="4" fill="#60f0b8" opacity="0.85"/>
+
+    <rect x="250" y="288" width="88" height="8" rx="4" fill="#2a2d22"/>
+    <rect x="250" y="288" width="44" height="8" rx="4" fill="#60c8f0" opacity="0.8"/>
+
+    <rect x="250" y="306" width="88" height="8" rx="4" fill="#2a2d22"/>
+    <rect x="250" y="306" width="78" height="8" rx="4" fill="#f060c8" opacity="0.8"/>
+  </g>
+
+  <!-- Small dot indicators -->
+  <circle cx="243" cy="194" r="4" fill="#c8f060" filter="url(#glow)"/>
+  <circle cx="243" cy="212" r="4" fill="#f0c060"/>
+  <circle cx="243" cy="230" r="4" fill="#f06060"/>
+  <circle cx="243" cy="274" r="4" fill="#60f0b8"/>
+  <circle cx="243" cy="292" r="4" fill="#60c8f0"/>
+  <circle cx="243" cy="310" r="4" fill="#f060c8"/>
+
+  <!-- Calorie circle (bottom center) -->
+  <circle cx="256" cy="332" r="22" fill="#2a2d22" stroke="#c060f0" stroke-width="2" opacity="0.8"/>
+  <text x="256" y="328" font-family="Georgia,serif" font-size="11" font-weight="bold"
+    fill="#c060f0" text-anchor="middle">kcal</text>
+  <text x="256" y="340" font-family="Georgia,serif" font-size="8"
+    fill="#888a7a" text-anchor="middle">calories</text>
+
+  <!-- Bottom border accent line -->
+  <line x1="136" y1="358" x2="376" y2="358" stroke="url(#ringGrad)" stroke-width="2" opacity="0.5"/>
+
+  <!-- Top-right corner scan dots -->
+  <circle cx="364" cy="160" r="3" fill="#60c8f0" opacity="0.6"/>
+  <circle cx="375" cy="160" r="3" fill="#60c8f0" opacity="0.4"/>
+  <circle cx="386" cy="160" r="3" fill="#60c8f0" opacity="0.2"/>
+</svg>
